@@ -1,0 +1,88 @@
+// Keyframes
+
+@keyframes shine-effect {
+    from {
+      transform: translate(0) rotate(45deg);
+    }
+    to {
+      transform: translateX(370px) rotate(45deg);
+    }
+  }
+
+.lavender-shining-button {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    background: $--clr-lavendar;
+    border-radius: 6px;
+    color: #fff;
+    transition: all ease 0.2s;
+    -webkit-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    transition: all ease 0.2s;
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  
+  .lavender-shining-button::after {
+    content: "";
+    width: 30px;
+    height: 200px;
+    position: absolute;
+    left: -20px;
+    top: 0;
+    margin-top: -20px;
+    background: #fff;
+    overflow: hidden;
+    opacity: 0.6;
+    filter: blur(20px);
+    animation: shine-effect 3s infinite;
+    animation-delay: 0s;
+    transform-origin: top;
+  }
+  .grey-shining-button {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    background: $--clr-grey;
+    border-radius: 6px;
+    color: #fff;
+    transition: all ease 0.2s;
+    -webkit-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    -moz-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+    transition: all ease 0.2s;
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    border: none;
+    font-size: 1rem;
+  }
+  
+  
+  .grey-shining-button::after {
+    content: "";
+    width: 30px;
+    height: 200px;
+    position: absolute;
+    left: -20px;
+    top: 0;
+    margin-top: -20px;
+    background: #fff;
+    overflow: hidden;
+    opacity: 0.6;
+    filter: blur(20px);
+    animation: shine-effect 3s infinite;
+    animation-delay: 0s;
+    transform-origin: top;
+  }
+  
+
+  

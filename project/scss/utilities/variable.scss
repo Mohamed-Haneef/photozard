@@ -1,0 +1,22 @@
+//colors
+
+$--clr-lavendar : #9873AC;
+$--clr-white : #fff;
+$--clr-grey : #A4A4A4;
+$--clr-dark-grey : #212529;
+
+//fonts
+
+$--font-primary : black;
+
+.bg-dark-grey{
+    background-color: $--clr-dark-grey;
+}
+
+.bg-lavender{
+    background-color: $--clr-lavendar;
+}
+
+.bg-grey{
+    background-color: $--clr-grey;
+}

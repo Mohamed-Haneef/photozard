@@ -1,0 +1,119 @@
+.notification-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.notification-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $--clr-white;
+    border-radius: 32px;
+    border: 1px solid $--clr-lavendar;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 20000000000; 
+    width: 300px;
+    margin: 0px 10px;
+    min-height: 300px;
+    height: max-content;
+    max-width: 800px;
+    position: relative;
+    animation: popIn 0.5s ease-out;
+
+    @include md{
+        width: 400px;
+    }
+
+    @include lg{
+        width: 600px;
+    }
+
+    @include xl{
+        width: 700px;
+        min-height: 350px;
+    }
+
+    &-banner {
+        color: #fff;
+        padding: 25px;
+        height: max-content;
+        text-align: start;
+        background-color: $--clr-lavendar;
+
+        @include lg{
+            height: 80px
+        }
+
+        @include xl{
+            height: 80px;
+        }
+        
+        .notification-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+
+            &:hover {
+                color: grey;
+            }
+        }
+    }
+
+    &-description {
+            padding: 25px;
+            color: $--font-primary;
+            text-align: start;
+    }
+
+    &-close {
+        padding: 20px 20px 30px 20px;
+        text-align: center;
+        margin-top: 20px;
+
+        @include md{
+            margin-top: 0px;
+        }
+        
+        a {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: $--clr-lavendar;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            @include xl{
+                padding: 10px 45px;
+            }
+
+            &:hover {
+                background-color: #A65822;
+            }
+        }
+    }
+}
