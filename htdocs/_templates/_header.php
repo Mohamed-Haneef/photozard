@@ -16,6 +16,7 @@
                         <li><a href="#" class="text-white">Follow on Twitter</a></li>
                         <li><a href="#" class="text-white">Like on Facebook</a></li>
                         <?if(Session::isAuthenticated()) {?>
+                        <li><a href="/profile" class="text-white">Edit profile</a></li>
                         <li><a href="/?logout" class="text-white">Logout</a></li>
                         <?} else {?>
                         <li><a href="/login.php" class="text-white">Login</a></li>

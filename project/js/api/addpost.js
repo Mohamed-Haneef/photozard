@@ -1,5 +1,7 @@
 
 $('#share-memory').on('click', function(){
+    var $this = $(this);
+    $this.prop('disabled', true);
     var formData = new FormData();
     var files = $('#post_image')[0].files;
     if ($('#post_text').val() == "") {
@@ -12,7 +14,7 @@ $('#share-memory').on('click', function(){
         formData.append('post_text', $('#post_text').val());
 
         $.ajax({
-            url: '/api/posts/add', // Replace with your server endpoint
+            url: '/api/posts/add', 
             type: 'POST',
             data: formData,
             contentType: false, // Important: Set content type to false
@@ -30,11 +32,14 @@ $('#share-memory').on('click', function(){
                 let postCount = parseInt($('#total-posts-count').text());
                 postCount += 1;
                 $('#total-posts-count').html(postCount)
+                $this.prop('disabled', false);
 
             },
             error: function(error) {
                 console.error('Error uploading file');
                 console.log(error);
+                $this.prop('disabled', false);
+                modalMessage("Error occured", "Unable to upload image!")
             }
         });
     } else {

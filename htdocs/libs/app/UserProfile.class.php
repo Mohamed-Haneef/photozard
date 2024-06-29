@@ -16,4 +16,10 @@ class UserProfile
         $this->conn = Database::getConnection();
         $this->table = 'user_profile';
     }
+
+    public static function getDetails($id)
+    {
+        $profile = new UserProfile($id);
+        return $profile;
+    }
 }

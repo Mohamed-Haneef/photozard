@@ -1,6 +1,8 @@
-/*Processed by SNA Labs on 23/6/2024 @ 12:40:30*/
+/*Processed by SNA Labs on 25/6/2024 @ 17:17:59*/
 
 $('#share-memory').on('click', function(){
+    var $this = $(this);
+    $this.prop('disabled', true);
     var formData = new FormData();
     var files = $('#post_image')[0].files;
     if ($('#post_text').val() == "") {
@@ -13,7 +15,7 @@ $('#share-memory').on('click', function(){
         formData.append('post_text', $('#post_text').val());
 
         $.ajax({
-            url: '/api/posts/add', // Replace with your server endpoint
+            url: '/api/posts/add', 
             type: 'POST',
             data: formData,
             contentType: false, // Important: Set content type to false
@@ -31,11 +33,14 @@ $('#share-memory').on('click', function(){
                 let postCount = parseInt($('#total-posts-count').text());
                 postCount += 1;
                 $('#total-posts-count').html(postCount)
+                $this.prop('disabled', false);
 
             },
             error: function(error) {
                 console.error('Error uploading file');
                 console.log(error);
+                $this.prop('disabled', false);
+                modalMessage("Error occured", "Unable to upload image!")
             }
         });
     } else {
@@ -58,9 +63,6 @@ $(document).on('click', '.album .btn-delete', function(){
             'name': "Delete",
             "class": "btn-danger",
             "onClick": function(event){
-                console.log(`Assume this post ${post_id} is deleted`);
-                // $(`#post-${post_id}`).remove();
-                
                 $.post('/api/posts/delete',
                 {
                     id: post_id
@@ -68,7 +70,7 @@ $(document).on('click', '.album .btn-delete', function(){
                     console.log(textSuccess);
                     console.log(data);
 
-                    if(textSuccess =="success" ){ //means 200
+                    if(textSuccess =="success" ){ 
                         var el = $(`#post-${post_id}`)[0]
                         $grid.masonry('remove', el).masonry('layout');
                         let postCount = parseInt($('#total-posts-count').text());

@@ -33,7 +33,7 @@
     z-index: 20000000000; 
     width: 300px;
     margin: 0px 10px;
-    min-height: 300px;
+    // min-height: 300px;
     height: max-content;
     max-width: 800px;
     position: relative;
@@ -86,6 +86,11 @@
             padding: 25px;
             color: $--font-primary;
             text-align: start;
+            p {
+                word-wrap: break-word; 
+                overflow-wrap: break-word; 
+                hyphens: auto;
+            }
     }
 
     &-close {

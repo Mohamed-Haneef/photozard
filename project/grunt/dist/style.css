@@ -1,4 +1,4 @@
-/*Processed by SNA Labs on 23/6/2024 @ 12:40:30*/
+/*Processed by SNA Labs on 25/6/2024 @ 17:17:59*/
 .bg-dark-grey {
   background-color: #212529;
 }
@@ -167,7 +167,6 @@ p {
   z-index: 20000000000;
   width: 300px;
   margin: 0px 10px;
-  min-height: 300px;
   height: max-content;
   max-width: 800px;
   position: relative;
@@ -222,6 +221,11 @@ p {
   padding: 25px;
   color: black;
   text-align: start;
+}
+.notification-modal-description p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .notification-modal-close {
   padding: 20px 20px 30px 20px;
