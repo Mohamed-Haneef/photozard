@@ -1,0 +1,76 @@
+.edit-profile {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: $--clr-dark-grey;
+    border: 1px solid $--clr-grey;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid $--clr-grey
+}
+
+.edit-profile .profile-photo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.edit-profile .profile-photo input {
+    display: none;
+}
+
+.edit-profile .profile-photo label {
+    display: inline-block;
+    background-color: $--clr-lavendar;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-profile .form-floating {
+    margin-bottom: 15px;
+    color: white
+}
+
+.edit-profile .form-control {
+    background-color: $--clr-dark-grey;
+    border: 1px solid #ddd;
+}
+
+.edit-profile .form-control:focus {
+    background-color: $--clr-dark-grey;
+}
+
+.edit-profile .form-control[readonly] {
+    background-color: $--clr-dark-grey;
+}
+
+.edit-profile .form-control[readonly]:hover {
+    cursor: not-allowed;
+}
+
+.btn-update {
+    background-color: $--clr-lavendar;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-update:hover {
+    background-color: $--clr-lavendar;
+}

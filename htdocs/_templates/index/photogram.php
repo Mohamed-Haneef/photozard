@@ -12,6 +12,9 @@
 			    $uploaded_time = Carbon::parse($p->getUploadedTime());
 			    $uploaded_time_str = $uploaded_time->diffForHumans();
 			    $owner = new User($post['owner']);
+			    $s = UserProfile::getDetails(Session::getUser()->getId());
+			    $a = $s->getAvatar();
+			    $avatar = isset($a) ? $a : "/profileimg/default.jpeg";
 			    if(Session::isAuthenticated()) {
 			        $l = new Like($p);
 			        $is_liked = $l->isLiked();

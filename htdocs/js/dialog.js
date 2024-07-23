@@ -181,7 +181,7 @@ class Dialog {
 				target: this,
                 modal: this.clone
 			}, function (event) {
-				// console.log("Hidden bs modal event");
+				console.log("Hidden bs modal event");
                 $('#'+event.data.target.cloneId).remove();
             });
 
@@ -229,3 +229,5 @@ function display_dialog(bt_name,content,func){
 	]);
 	d.show();
 }
+
+// display_dialog('delete', 'test modal', ()=>{ console.log("deleted") })

@@ -5,14 +5,16 @@
 @import "utilities/modal.scss";
 @import "template/login.scss";
 @import "template/signup.scss";
+@import "template/editprofile.scss";
 
-body{
+
+body {
     background-color: $--clr-dark-grey;
 }
 
 // Form controls
 
-.form-control:focus{
+.form-control:focus {
     background-color: $--clr-dark-grey;
     color: $--clr-white;
     border: 1px solid $--clr-lavendar;
@@ -21,11 +23,12 @@ body{
     -moz-box-shadow: 0px 0px 16px 3px $--clr-lavendar;
 }
 
-.form-control::placeholder{
+.form-control::placeholder {
     color: $--clr-white;
 }
+
 .form-control:-webkit-autofill {
-    background-color: $--clr-grey!important;
+    background-color: $--clr-grey !important;
     color: $--clr-white !important;
     border: 1px solid #ccc !important;
 }
@@ -36,17 +39,17 @@ body{
     border: 1px solid #ccc !important;
 }
 
-label{
+label {
     color: $--clr-white;
     font-weight: 600;
 }
 
 // Photo cards
 
-.card{
+.card {
     border: 1px solid $--clr-lavendar
 }
 
-.card-body{
+.card-body {
     background-color: $--clr-dark-grey;
 }

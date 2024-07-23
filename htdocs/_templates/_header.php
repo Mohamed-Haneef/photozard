@@ -1,5 +1,5 @@
 <header>
-    <div class="collapse bg-lavender" id="navbarHeader">
+    <!-- <div class="collapse bg-lavender" id="navbarHeader">
         <div class="container">
             <div class="row">
                 <div class="col-sm-8 col-md-7 py-4">
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="navbar navbar-dark bg-lavender shadow-sm">
         <div class="container">
             <a href="#" class="navbar-brand d-flex align-items-center">
@@ -38,10 +38,14 @@
                 <strong>Photozard</strong>
             </a>
             <?php if(Session::isAuthenticated()) {?>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
                 aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
+            <div>
+                <a href="/profile" class="grey-shining-button">Edit Profile</a>
+                <a href="/?logout" class="red-shining-button">Logout</a>
+            </div>
             <?php }?>
         </div>
     </div>

@@ -131,6 +131,43 @@ p {
   transform-origin: top;
 }
 
+.red-shining-button {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  background: #ff0000;
+  border-radius: 6px;
+  color: #fff;
+  transition: all ease 0.2s;
+  -webkit-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+  box-shadow: 2px 3px 2px 0px rgba(0, 0, 0, 0.17);
+  transition: all ease 0.2s;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  border: none;
+  font-size: 1rem;
+}
+
+.red-shining-button::after {
+  content: "";
+  width: 30px;
+  height: 200px;
+  position: absolute;
+  left: -20px;
+  top: 0;
+  margin-top: -20px;
+  background: #fff;
+  overflow: hidden;
+  opacity: 0.6;
+  filter: blur(20px);
+  animation: shine-effect 3s infinite;
+  animation-delay: 0s;
+  transform-origin: top;
+}
+
 .notification-modal-overlay {
   position: fixed;
   top: 0;
@@ -347,6 +384,83 @@ p {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+
+.edit-profile {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #212529;
+  border: 1px solid #A4A4A4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #A4A4A4;
+}
+
+.edit-profile .profile-photo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.edit-profile .profile-photo input {
+  display: none;
+}
+
+.edit-profile .profile-photo label {
+  display: inline-block;
+  background-color: #9873AC;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-profile .form-floating {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.edit-profile .form-control {
+  background-color: #212529;
+  border: 1px solid #ddd;
+}
+
+.edit-profile .form-control:focus {
+  background-color: #212529;
+}
+
+.edit-profile .form-control[readonly] {
+  background-color: #212529;
+}
+
+.edit-profile .form-control[readonly]:hover {
+  cursor: not-allowed;
+}
+
+.btn-update {
+  background-color: #9873AC;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-update:hover {
+  background-color: #9873AC;
 }
 
 body {

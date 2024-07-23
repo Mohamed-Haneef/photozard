@@ -1,5 +1,5 @@
 
-$('#share-memory').on('click', function(){
+$('#share-memory').on('click', function () {
     var $this = $(this);
     $this.prop('disabled', true);
     var formData = new FormData();
@@ -7,6 +7,7 @@ $('#share-memory').on('click', function(){
     if ($('#post_text').val() == "") {
         t = new Toast('Error', 'now', 'Please enter a caption');
         t.show();
+        $this.prop('disabled', false);
         return;
     }
     if (files.length > 0) {
@@ -14,17 +15,17 @@ $('#share-memory').on('click', function(){
         formData.append('post_text', $('#post_text').val());
 
         $.ajax({
-            url: '/api/posts/add', 
+            url: '/api/posts/add',
             type: 'POST',
             data: formData,
             contentType: false, // Important: Set content type to false
             processData: false, // Important: Do not process the data
-            success: function(response) {
+            success: function (response) {
                 console.log('File uploaded successfully');
                 console.log(response);
                 response = $(response);
                 $grid.prepend(response).masonry('prepended', response).masonry('layout');
-                $grid.imagesLoaded().progress( function() {
+                $grid.imagesLoaded().progress(function () {
                     $grid.masonry('layout');
                 });
                 $('#post_image').val("");
@@ -35,7 +36,7 @@ $('#share-memory').on('click', function(){
                 $this.prop('disabled', false);
 
             },
-            error: function(error) {
+            error: function (error) {
                 console.error('Error uploading file');
                 console.log(error);
                 $this.prop('disabled', false);
